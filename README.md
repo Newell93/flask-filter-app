@@ -1,1 +1,1 @@
-Dogs are awesome.
+Make America great again.

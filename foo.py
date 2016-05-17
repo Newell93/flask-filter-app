@@ -1,4 +1,4 @@
 from helpers import get_data
-dogs = get_data()
+data = get_data()
 def print_record_count():
-	print(len(dogs))
+	print(len(data))
