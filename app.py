@@ -16,12 +16,12 @@ def get_data():
                 newrows.append(row)
         return newrows
 
-def filter_data(STABBR=''):
+def filter_data(STABBR='', sortby=None):
     upstate = STABBR.upper()
     rows = [d for d in get_data() if upstate in d['STABBR']]
-    if sortby == 'Highest_Debt':
+    if sortby == 'Highest Debt':
         return sorted(rows, key=itemgetter('GRAD_DEBT_MDN_SUPP'), reverse=True)
-    elif sortby == 'Lowest_Debt':
+    elif sortby == 'Lowest Debt':
         return sorted(rows, key=itemgetter('GRAD_DEBT_MDN_SUPP'))
     else:
         return sorted(rows, key=itemgetter('STABBR'))
@@ -36,7 +36,7 @@ def results():
     _sortby =  request.args.get('sortby')
     _STABBR =  request.args.get('STABBR')
     schools = filter_data(STABBR=_STABBR, sortby=_sortby)
-    html = render_template('results.html', STABBR=STABBR,
+    html = render_template('results.html', STABBR=_STABBR,
                            scorecard_elements=schools, sortby=_sortby)
     return html
 

@@ -13,18 +13,21 @@
   <p>Your search for <strong>"{{ STABBR }}"</strong>
   is included below.</p>
 
-  <p>Results sorted by <strong>{{sortby}}</strong></p>
+  <p>The following results are sorted by <strong>{{sortby}}</strong>. Enjoy perusing this incredible site!</p>
 
-    <table>
-    <tbody>
+    <table border=1 cellpadding=7>
+    <tr>
+      <th>School</th>
+      <th>City</th>
+      <th>Average Debt Upon Graduation ($) </th>
+    </tr>
       {% for p in scorecard_elements %}
         <tr>
-          <td>{{p.STABBR}}</td>
-          <td>{{p.CITY}}</td>
           <td>{{p.INSTNM}}</td>
+          <td>{{p.CITY}}</td>
+          <td>{{p.GRAD_DEBT_MDN_SUPP}}</td>
         </tr>
       {% endfor %}
-    </tbody>
 
   </table>
 
