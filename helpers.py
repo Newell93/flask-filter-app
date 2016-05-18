@@ -2,9 +2,15 @@ from operator import itemgetter
 import csv
 SCORE_FNAME = './static/data/scorecard_elements.csv'
 def get_data():
-    with open(SCORE_FNAME) as f:
-    	newrows = []
+     with open(SCORE_FNAME, encoding='latin1') as f:
+        newrows = []
         for row in csv.DictReader(f):
-        	if row['STABBR'] == 'AL':
-        		newrows.append(row)
+            if row['GRAD_DEBT_MDN_SUPP'] != 'PrivacySuppressed' and row['GRAD_DEBT_MDN_SUPP'] != 'NULL':
+                row['GRAD_DEBT_MDN_SUPP'] = float(row['GRAD_DEBT_MDN_SUPP'])
+                newrows.append(row)
         return newrows
+
+def sort_by_criteria(STABBR):
+    if criteria == 'Most_Debt':
+        rows = sorted()
+    for c in datarows:

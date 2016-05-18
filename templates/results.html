@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search results</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+
+  <div>Search again:   {% include 'searchbox.html' %}</div>
+
+
+  <p>Your search for <strong>"{{ STABBR }}"</strong>
+  is included below.</p>
+
+  <p>Results sorted by <strong>{{sortby}}</strong></p>
+
+    <table>
+    <tbody>
+      {% for p in scorecard_elements %}
+        <tr>
+          <td>{{p.STABBR}}</td>
+          <td>{{p.CITY}}</td>
+          <td>{{p.INSTNM}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
+  </body>
+</html>
