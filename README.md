@@ -14,6 +14,8 @@ This news app -- affectionately known as **Debty** -- can provide parents of col
 
 The filter is the state, and the attribute to sort by is average student debt upon graduation. The app takes state abbreviations as lowercase or uppercase. Choose what works best for you.
 
+I also filtered the dataset from the outset by removing any 'NULL' or 'PrivacySuppresed' values in the grad debt column.
+
 #Inspiration
 
 Here are three sites that use similar data in a similar fashion:

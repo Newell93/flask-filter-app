@@ -10,7 +10,4 @@ def get_data():
                 newrows.append(row)
         return newrows
 
-def sort_by_criteria(STABBR):
-    if criteria == 'Most_Debt':
-        rows = sorted()
-    for c in datarows:
+
